@@ -11,13 +11,12 @@ spi = SPI(1, baudrate=1000000, sck=Pin(18), mosi=Pin(23), miso=Pin(19))
 pins = {"ss": 5, "dio0": 26, "reset": 14}
 
 # LoRa parameters
-params = {"frequency": 868e6, "sync_word": 0x34}
+params = {"frequency": 433e6, "sync_word": 0x34}
 
 # Initialize LoRa
 lora = SX127x(spi, pins, params)
 
 # Configure LoRa
-lora.setFrequency(433000000)
 lora.setTxPower(10)
 lora.setSpreadingFactor(10)
 lora.setSignalBandwidth(125000)
